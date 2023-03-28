@@ -1,0 +1,6 @@
+[submodule "src/external/spdlog"]
+	path = src/external/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "src/external/json"]
+	path = src/external/json
+	url = https://github.com/nlohmann/json.git

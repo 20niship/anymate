@@ -1,0 +1,12 @@
+#pragma once
+#include <movutl/ui/widget/button.hpp>
+#include <movutl/ui/widget/check.hpp>
+#include <movutl/ui/widget/col.hpp>
+#include <movutl/ui/widget/collapse.hpp>
+#include <movutl/ui/widget/frame.hpp>
+#include <movutl/ui/widget/label.hpp>
+#include <movutl/ui/widget/range2.hpp>
+#include <movutl/ui/widget/slider.hpp>
+#include <movutl/ui/widget/vec.hpp>
+#include <movutl/ui/widget/table.hpp>
+#include <movutl/ui/widget/plot.hpp>

@@ -1,0 +1,156 @@
+[device]
+device_id=0
+
+enable_depth=true
+enable_rgb=false
+enable_gyro=false
+enable_accel=false
+enable_pose=false
+display_3d=false
+
+[depth]
+depth_size_candidates=[
+    # [1024, 768, 30], # L515
+    # [1280, 720, 30], # D435
+    # [1024, 768, 10],
+    # [640, 480, 90],
+    [640, 480, 90],
+    # [320, 240, 30],
+    [0, 0, 0] # デバイスが自動的に値を設定する
+]
+
+# 各設定を書く。書かない場合はデフォルト（すでに設定されている値になる）
+# RS2_OPTION_VISUAL_PRESET=4 # (0-5) 遠くがよく見えるようにしたりにしたり近くがよく見えるようにしたりできる
+# RS2_OPTION_LASER_POWER = 100 # (0-100) 出力
+# RS2_OPTION_CONFIDENCE_THRESHOLD=1 # (0-3)そのPixelが有効なものかどうかの判断に使われるアルゴリズムのしきい値
+# RS2_OPTION_FRAMES_QUEUE_SIZE = 16 # フレームキューサイズ
+# RS2_OPTION_ERROR_POLLING_ENABLED = 1 # エラーポーリングON/OFF
+# RS2_OPTION_DEPTH_UNITS=0.00025 # (0.00025 - 0.00025) 
+RS2_OPTION_MIN_DISTANCE=300 # (0 - 8000) 
+RS2_OPTION_MAX_DISTANCE=1.0 # TODOここで設定したいけど単位がよくわからん
+
+# RS2_OPTION_INTER_CAM_SYNC_MODE=0 # Impose Inter-camera HW synchronization mode. Applicable for D400/L500/Rolling Shutter SKUs 
+# RS2_OPTION_LLD_TEMPERATURE=32.2462 # (0-100)
+# RS2_OPTION_MC_TEMPERATURE=31.7669 # (0-100)
+# RS2_OPTION_MA_TEMPERATURE=31.7669 # (0-100)
+# RS2_OPTION_APD_TEMPERATURE=-9999 # (0 - 100) 
+# RS2_OPTION_HUMIDITY_TEMPERATURE=31.9935 #  (0 - 100) 
+# RS2_OPTION_GLOBAL_TIME_ENABLED=0
+# RS2_OPTION_DEPTH_OFFSET=4.5 #(4.5 - 4.5)  # Offset from sensor to depth origin in millimetrers 
+# RS2_OPTION_FREEFALL_DETECTION_ENABLED=1 # Enable/disable sensor shutdown when a free-fall is detected (on by default) 
+# RS2_OPTION_POST_PROCESSING_SHARPENING=1 # (0 - 3) Changes the amount of sharpening in the post-processed image 
+# RS2_OPTION_PRE_PROCESSING_SHARPENING=0 # (0 - 5) Changes the amount of sharpening in the pre-processed image 
+# RS2_OPTION_NOISE_FILTERING=4 # (0 - 6) Control edges and background noise 
+# RS2_OPTION_INVALIDATION_BYPASS=0 # Enable pixel invalidation 
+# RS2_OPTION_DIGITAL_GAIN=9 # (8 - 18) Change the depth digital gain see rs2_digital_gain for values 
+# RS2_OPTION_SENSOR_MODE=0 #(0 - 2) 
+# RS2_OPTION_HOST_PERFORMANCE=0 # (0 - 2) 
+RS2_OPTION_ENABLE_MAX_USABLE_RANGE=0 # Turn on/off the maximum usable depth sensor range given the amount of ambient light in the scene 
+# RS2_OPTION_NOISE_ESTIMATION=0 #  (0 - 4100) Noise estimation - indicates the noise on the IR image 
+# RS2_OPTION_ENABLE_IR_REFLECTIVITY=0 # Enables data collection for calculating IR pixel reflectivity 
+
+# RS2_OPTION_EXPOSURE   = 1 # 露出
+# RS2_OPTION_GAIN = 1 # ゲイン
+# RS2_OPTION_ENABLE_AUTO_EXPOSURE = 1 # 自動露出ON/OFF
+# RS2_OPTION_EMITTER_ENABLED = 1 # レーザー出力ON/OFF
+# RS2_OPTION_ASIC_TEMPERATURE = 1 # ASIC温度(パイプライン開始後のみ対応)
+# RS2_OPTION_PROJECTOR_TEMPERATURE = 1 # エラーポーリングON/OFF
+# RS2_OPTION_OUTPUT_TRIGGER_ENABLED=1
+# RS2_OPTION_STEREO_BASELINE=0
+
+
+[rgb]
+rgb_size_candidates=[
+    [1280, 720, 30],
+    # [640, 480, 30],
+    # [1920, 1080, 30],
+    # [960, 540, 30],
+    [1280, 720, 30],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0] # デバイスが自動的に値を設定する
+]
+
+
+[align]
+# align_to_col=true # LagoriブレイクのときはこれをTrueにする
+align_to_depth=true
+
+[filters]
+zero_fill_from_left=false
+zero_fill_from_right=false
+zero_fill_farest=false
+zero_fill_nearest=false
+
+edge_preserve=false
+edge_preserve_params=[0.2, 0.1, 1000.0] # alpha, delta_z, hole_fill_radius
+
+# ##############################################################################################
+#        以下はデフォルト値のメモ
+# ##############################################################################################
+# -------------------------   device : 0 -------------------------DEVICE INFORMATION   .......
+# name          : Intel RealSense L515
+# serial number : f0221220
+# product id    : 0B64
+# Firmware      : ver.01.05.01.03
+# Recommended Firmeare : ver.01.05.08.01
+# Debug OP code : 15
+# Advanced mode : Unknown
+# USB type      : 3.2
+# Physical Port : /sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2:1.0/video4linux/video2
+
+# SENSORS .......
+# 3 sensor(s) found!
+# --------------     Sensor Name: L500 Depth Sensor--------------------------
+# Visual Preset  :  4 (0 - 5) 
+# Laser Power  :  100 (0 - 100) 
+# Confidence Threshold  :  1 (0 - 3) 
+# Frames Queue Size  :  16 (0 - 32) 
+# Error Polling Enabled  :  1 (0 - 1) 
+# Depth Units  :  0.00025 (0.00025 - 0.00025) 
+# Min Distance  :  245 (0 - 8000) 
+# Inter Cam Sync Mode  :  0 (0 - 1) 
+# LDD temperature  :  32.2462 (0 - 100) 
+# Mc Temperature  :  31.7669 (0 - 100) 
+# Ma Temperature  :  30.3088 (0 - 100) 
+# Global Time Enabled  :  0 (0 - 1) 
+# Apd Temperature  :  -9999 (0 - 100) 
+# Depth Offset  :  4.5 (4.5 - 4.5) 
+# Freefall Detection Enabled  :  1 (0 - 1) 
+# Receiver Gain  :  9 (8 - 18) 
+# Post Processing Sharpening  :  1 (0 - 3) 
+# Pre Processing Sharpening  :  0 (0 - 5) 
+# Noise Filtering  :  4 (0 - 6) 
+# Invalidation Bypass  :  0 (0 - 1) 
+# Digital Gain  :  1 (1 - 2) 
+# Sensor Mode  :  0 (0 - 2) 
+# Host Performance  :  0 (0 - 2) 
+# Humidity Temperature  :  31.9936 (0 - 100) 
+# Enable Max Usable Range  :  0 (0 - 1) 
+# Noise Estimation  :  0 (0 - 4100) 
+# Enable IR Reflectivity  :  0 (0 - 1) 
+
+# --------------     Sensor Name: RGB Camera--------------------------
+# Backlight Compensation  :  128 (0 - 255) 
+# Brightness  :  0 (-64 - 64) 
+# Contrast  :  50 (0 - 100) 
+# Exposure  :  166 (1 - 10000) 
+# Gain  :  256 (0 - 4096) 
+# Hue  :  0 (-180 - 180) 
+# Saturation  :  50 (0 - 100) 
+# Sharpness  :  50 (0 - 100) 
+# White Balance  :  4600 (2800 - 6500) 
+# Enable Auto Exposure  :  1 (0 - 1) 
+# Enable Auto White Balance  :  1 (0 - 1) 
+# Frames Queue Size  :  16 (0 - 32) 
+# Power Line Frequency  :  0 (0 - 2) 
+# Auto Exposure Priority  :  1 (0 - 1) 
+# Global Time Enabled  :  0 (0 - 1) 
+# Host Performance  :  0 (0 - 2) 
+
+# --------------     Sensor Name: Motion Module--------------------------
+# Frames Queue Size  :  16 (0 - 32) 
+# Enable Motion Correction  :  1 (0 - 1) 
+# Global Time Enabled  :  0 (0 - 1) 
+
+
