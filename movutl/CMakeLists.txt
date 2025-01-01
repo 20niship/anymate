@@ -17,6 +17,20 @@ if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
 endif()
 find_package(PCL REQUIRED QUIET COMPONENTS)
 
+if(APPLE)
+  find_package(PkgConfig REQUIRED)
+  pkg_check_modules(JSONCPP jsoncpp)
+  find_package(JsonCpp  QUIET REQUIRED)
+  if(NOT JSONCPP_FOUND)
+    set(JsonCpp::JsonCpp jsoncpp)
+  endif()
+
+  # Appleでは何もしないとOpenMPが見つからないので、Homebrewのパスを指定する
+  # https://zenn.dev/arawii/articles/47a24cf2d0a3b2
+  cmake_policy(SET CMP0074 NEW) # OpenMP_ROOTの環境変数を使用してパッケージを探す
+  set(OpenMP_ROOT "/opt/homebrew/opt/libomp")
+endif()
+
 
 # --------------------------------------------------------------
 # ----------------     Renderer (OpenGL / Vulkan) --------------
@@ -61,10 +75,10 @@ message("movutl data dir = ${movutl-data_SOURCE_DIR}")
 file(GLOB DATA_FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/*)
 file(COPY ${DATA_FILES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-file(GLOB MOVUTL_SOURCE_1 ${CMAKE_CURRENT_SOURCE_DIR}/movutl/*.cpp) 
-file(GLOB MOVUTL_SOURCE_2 ${CMAKE_CURRENT_SOURCE_DIR}/movutl/**/*.cpp) 
-file(GLOB MOVUTL_SOURCE_3 ${CMAKE_CURRENT_SOURCE_DIR}/movutl/*/*/*.cpp) 
-file(GLOB MOVUTL_SOURCE_4 ${CMAKE_CURRENT_SOURCE_DIR}/movutl/*/*/*/*.cpp) 
+file(GLOB MOVUTL_SOURCE_1 ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp) 
+file(GLOB MOVUTL_SOURCE_2 ${CMAKE_CURRENT_SOURCE_DIR}/**/*.cpp) 
+file(GLOB MOVUTL_SOURCE_3 ${CMAKE_CURRENT_SOURCE_DIR}/*/*/*.cpp) 
+file(GLOB MOVUTL_SOURCE_4 ${CMAKE_CURRENT_SOURCE_DIR}/*/*/*/*.cpp) 
 set(MOVUTL_SRC ${MOVUTL_SOURCE_1} ${MOVUTL_SOURCE_2} ${MOVUTL_SOURCE_3} ${MOVUTL_SOURCE_4})
 add_library(mucore ${MOVUTL_SRC})
 target_link_libraries(mucore ${MOVUTL_LIBRARIES})

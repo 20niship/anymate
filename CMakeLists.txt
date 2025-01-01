@@ -8,10 +8,12 @@ if(BUILD_DOC)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/doxygen.cmake)
 endif()
 
+add_subdirectory(movutl)
+
 add_subdirectory(tests)
 add_subdirectory(examples)
 
-add_executable(movutl ${CMAKE_CURRENT_SOURCE_DIR}/src/movutl/lancher/main.cpp)
+add_executable(movutl ${CMAKE_CURRENT_SOURCE_DIR}/lancher/main.cpp)
 target_link_libraries(movutl ${MOVUTL_LIBRARIES})
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/install.cmake)
