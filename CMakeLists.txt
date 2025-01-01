@@ -108,10 +108,10 @@ set(ALL_INCLUDES
     ${FETCHCONTENT_BASE_DIR}/stb-src
     ${FETCHCONTENT_BASE_DIR}/cpptoml-src/include/
     ${FREETYPE_INCLUDE_DIRS}
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${PCL_INCLUDE_DIRS}
     # ${spdlog_INCLUDE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/loguru/include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/movutl
+    ${CMAKE_CURRENT_SOURCE_DIR}/movutl/external/loguru/include/
 )
 
 if(RENDERER STREQUAL "WITH_OPENGL")
