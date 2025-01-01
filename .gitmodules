@@ -4,3 +4,6 @@
 [submodule "src/external/json"]
 	path = src/external/json
 	url = https://github.com/nlohmann/json.git
+[submodule "src/external/loguru"]
+	path = movutl/external/loguru
+	url = https://github.com/emilk/loguru.git

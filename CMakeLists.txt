@@ -23,7 +23,7 @@ find_package(assimp REQUIRED QUIET)
 
 # https://github.com/PointCloudLibrary/pcl/issues/3680
 if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
-     set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS 1 CACHE INTERNAL "No dev warnings")
+   set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS 1 CACHE INTERNAL "No dev warnings")
 endif()
 find_package(PCL REQUIRED QUIET COMPONENTS)
 
@@ -85,8 +85,6 @@ endif()
 
 add_compile_definitions(${RENDERER})
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/external/spdlog)
-
 set(ALL_LIBS 
   glfw
   ${GLFW_LIBRARY_DIRS}
@@ -113,7 +111,7 @@ set(ALL_INCLUDES
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${PCL_INCLUDE_DIRS}
     # ${spdlog_INCLUDE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/spdlog/include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/loguru/include/
 )
 
 if(RENDERER STREQUAL "WITH_OPENGL")
