@@ -7,3 +7,18 @@
 [submodule "src/external/loguru"]
 	path = movutl/external/loguru
 	url = https://github.com/emilk/loguru.git
+[submodule "movutl/external/imgui"]
+	path = movutl/external/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "movutl/external/nanobind"]
+	path = movutl/external/nanobind
+	url = https://github.com/wjakob/nanobind.git
+[submodule "movutl/external/IconFontCppHeaders"]
+	path = movutl/external/IconFontCppHeaders
+	url = https://github.com/juliettef/IconFontCppHeaders.git
+[submodule "movutl/external/filewatch"]
+	path = movutl/external/filewatch
+	url = https://github.com/ThomasMonkman/filewatch.git
+[submodule "movutl/external/doctest"]
+	path = movutl/external/doctest
+	url = https://github.com/doctest/doctest.git
