@@ -22,3 +22,9 @@
 [submodule "movutl/external/doctest"]
 	path = movutl/external/doctest
 	url = https://github.com/doctest/doctest.git
+[submodule "movutl/external/json"]
+	path = movutl/external/json
+	url = https://github.com/nlohmann/json.git
+[submodule "movutl/external/stb"]
+	path = movutl/external/stb
+	url = https://github.com/nothings/stb.git
